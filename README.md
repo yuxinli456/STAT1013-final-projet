@@ -12,13 +12,13 @@ jupyter:
 
 <div class="cell markdown" id="a6UlPiHeXMXu">
 
-#CUHK-STAT1013: Practical Assignment Part 1: Sharing Your Idea and Data
+# CUHK-STAT1013: Practical Assignment Part 1: Sharing Your Idea and Data
 
 </div>
 
 <div class="cell markdown" id="tO_vOeE9XU_C">
 
-#World Happiness Report Dataset Background Information **Description**:
+# World Happiness Report Dataset Background Information **Description**:
 
 The dataset ranks countries by their happiness index from World
 Happiness Report.
