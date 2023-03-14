@@ -88,11 +88,6 @@ Happiness Report.
 colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:300}"
 id="RnD-noiNasWv" outputId="c3da6554-5134-4cb6-a9c9-b0c125df2276">
 
-``` python
-import pandas as pd
-df = pd.read_csv('https://github.com/PhilippeCodes/World-Happiness-Report-Data-Analysis/blob/master/World%20Happiness%20Report.csv?raw=true')
-df.head(5)
-```
 
 <div class="output execute_result" execution_count="61">
 
@@ -139,10 +134,6 @@ df.head(5)
 colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
 id="zMKa12NpDifH" outputId="1cb7bc53-2882-4dbc-ac70-ffdbff125add">
 
-``` python
-## First 5 records of G1
-(df[(df['Region'] == 'Western Europe')|(df['Region'] == 'Eastern Europe')|(df['Region'] == 'Europe')]['Happiness Score']).head(5)
-```
 
 <div class="output execute_result" execution_count="90">
 
@@ -161,10 +152,7 @@ id="zMKa12NpDifH" outputId="1cb7bc53-2882-4dbc-ac70-ffdbff125add">
 colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
 id="uu7AhoX3Eeto" outputId="dd6a330b-9a5f-4f1a-aede-4cfebfba5ef9">
 
-``` python
-## First 5 records of G1
-(df[(df['Region'] == 'Asia-Pacific')]['Happiness Score']).head(5)
-```
+First 5 records of G1:
 
 <div class="output execute_result" execution_count="40">
 
@@ -191,16 +179,7 @@ id="uu7AhoX3Eeto" outputId="dd6a330b-9a5f-4f1a-aede-4cfebfba5ef9">
 colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
 id="ixLCOT6qE_gp" outputId="3fe52ff9-efc1-4573-d32d-940ad5eabb18">
 
-``` python
-##Number of countries in G1
-len(df[(df['Region'] == 'Western Europe')|(df['Region'] == 'Eastern Europe')|(df['Region'] == 'Europe')]['Happiness Score'])
-```
-
-<div class="output execute_result" execution_count="42">
-
-    42
-
-</div>
+Number of countries in G1: 42
 
 </div>
 
@@ -208,14 +187,7 @@ len(df[(df['Region'] == 'Western Europe')|(df['Region'] == 'Eastern Europe')|(df
 colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
 id="P6NzyD63FWiN" outputId="94c849d6-c23c-4a57-d0bd-aa0f9916c47f">
 
-``` python
-##Number of countries in G2
-len(df[(df['Region'] == 'Asia-Pacific')]['Happiness Score'])
-```
-
-<div class="output execute_result" execution_count="43">
-
-    43
+Number of countries in G2: 43
 
 </div>
 
@@ -223,7 +195,7 @@ len(df[(df['Region'] == 'Asia-Pacific')]['Happiness Score'])
 
 <div class="cell markdown" id="inBjKJrKFzw5">
 
-1.  Descriptive Statistics of **G1** & **G2**
+2.  Descriptive Statistics of **G1** & **G2**
 
 </div>
 
@@ -231,13 +203,7 @@ len(df[(df['Region'] == 'Asia-Pacific')]['Happiness Score'])
 colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:300}"
 id="DI8cwOTtMHfn" outputId="d343b3d4-bc8c-4aa7-b494-4e7cd11dfc33">
 
-``` python
-##G1
-df_G1 = df[(df['Region'] == 'Western Europe')|(df['Region'] == 'Eastern Europe')|(df['Region'] == 'Europe')]
-df_G1.describe()
-```
-
-<div class="output execute_result" execution_count="68">
+G1:
 
            Happiness Rank  Happiness Score    Economy     Family     Health  \
     count       42.000000        42.000000  42.000000  42.000000  42.000000   
@@ -267,13 +233,7 @@ df_G1.describe()
 colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:300}"
 id="Dm72EYeCRQie" outputId="5737a412-0e67-4507-f7af-feab8e8d55a5">
 
-``` python
-##G2
-df_G2 = df[(df['Region'] == 'Asia-Pacific')]
-df_G2.describe()
-```
-
-<div class="output execute_result" execution_count="67">
+G2:
 
            Happiness Rank  Happiness Score    Economy     Family     Health  \
     count       43.000000        43.000000  43.000000  43.000000  43.000000   
@@ -301,123 +261,3 @@ df_G2.describe()
 
 <div class="cell markdown" id="1N2GiyBtRlCh">
 
-1.  Data visulizations of **G1** & **G2**
-
-</div>
-
-<div class="cell code" execution_count="64" id="osPYdE9VHPvN">
-
-``` python
-import matplotlib.pyplot as plt
-import seaborn as sns
-plt.rcParams['figure.figsize'] = [10, 5]
-
-sns.set()
-```
-
-</div>
-
-<div class="cell code" execution_count="72"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:983}"
-id="3yoEcNE5SOH6" outputId="783e46fd-8cc8-4dc3-b30e-717243d216af">
-
-``` python
-##G1
-sns.histplot(df_G1, x = 'Happiness Score')
-plt.show()
-sns.boxplot(data = df_G1, x = 'Happiness Score')
-plt.show()
-sns.violinplot(data = df_G1, x = 'Happiness Score')
-plt.show()
-```
-
-<div class="output display_data">
-
-![](68c19c639ef1e31e9e2ea4552c2e3b7344042384.png)
-
-</div>
-
-<div class="output display_data">
-
-![](d3ef862e0ff4b1a168859e2e97985924e585242a.png)
-
-</div>
-
-<div class="output display_data">
-
-![](963c753d0ccb0a622243b27b130a86765e4536f8.png)
-
-</div>
-
-</div>
-
-<div class="cell code" execution_count="73"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:983}"
-id="NAKwEFj8SOAM" outputId="010b9f01-e282-4c13-966a-296c4ed7b9cc">
-
-``` python
-##G2
-sns.histplot(df_G2, x = 'Happiness Score')
-plt.show()
-sns.boxplot(data = df_G2, x = 'Happiness Score')
-plt.show()
-sns.violinplot(data = df_G2, x = 'Happiness Score')
-plt.show()
-```
-
-<div class="output display_data">
-
-![](b00c76953e952cb8272d13395a616d20e3b8cbea.png)
-
-</div>
-
-<div class="output display_data">
-
-![](132bffb439deb33fe52637300a9857392f09cfa8.png)
-
-</div>
-
-<div class="output display_data">
-
-![](8f81d62d7f5b3e0e544d52680ac5140cbebeb8ac.png)
-
-</div>
-
-</div>
-
-<div class="cell code" execution_count="98"
-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:983}"
-id="tQZlFHJYSNzY" outputId="560a8706-a9ae-45e0-ab2d-f578298b98a5">
-
-``` python
-##G1 & G2
-df_both = df[(df['Region'] == 'Western Europe')|(df['Region'] == 'Eastern Europe')|(df['Region'] == 'Europe')|(df['Region'] == 'Asia-Pacific')]
-df_both = df_both.replace(to_replace = ["Western Europe", "Eastern Europe"], value = "Europe")
-
-sns.histplot(df_both, x = 'Happiness Score', hue = 'Region')
-plt.show()
-sns.boxplot(data = df_both, x = 'Happiness Score', y = 'Region')
-plt.show()
-sns.violinplot(data = df_both, x = 'Happiness Score', y = 'Region')
-plt.show()
-```
-
-<div class="output display_data">
-
-![](1420e35db67b723ca39537a554e99a6d1f990b17.png)
-
-</div>
-
-<div class="output display_data">
-
-![](7800597677d742782bf39610d415f55f0a5d1e2e.png)
-
-</div>
-
-<div class="output display_data">
-
-![](375581ba38cedc0e053c6ebe1a3c9c40426081df.png)
-
-</div>
-
-</div>
